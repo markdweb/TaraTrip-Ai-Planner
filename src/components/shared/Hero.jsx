@@ -2,8 +2,10 @@ import React from 'react'
 import { Button } from '../ui/button'
 import { FaArrowRightLong, FaPesoSign }  from "react-icons/fa6"
 import { Heart, Plane } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const Hero = () => {
+    const navigate = useNavigate()
   return (
     <section className='min-h-screen relative overflow-hidden bg-linear-to-br from-indigo-50 to-blue-100 flexCenter py-22'>
         {/* Decorative Blobs  */}
@@ -22,7 +24,7 @@ const Hero = () => {
               </div>
               <h1 className='text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-indigo-600 to-purple-600 mb-6 tracking-tight leading-tight animate-fade-in-up animation-delay-100'>Design Your Dream Getaway in Seconds</h1>
               <p className='text-xl text-gray-600 mb-10 max-w-2xl mx-auto'>Tell us where you want to go, and let our advanced AI craft the perfect itinerary tailored to your budget and interests.</p>
-              <Button className={'group relative inline-flexCenter px-8! py-8! text-lg font-bold text-white transition-all duration-200 bg-indigo-600 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 hover:bg-indigo-700 hover:scale-105 shadow-x1'}>
+              <Button onClick={()=>navigate('/create-trip')} className={'group relative inline-flexCenter px-8! py-8! text-lg font-bold text-white transition-all duration-200 bg-indigo-600 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 hover:bg-indigo-700 hover:scale-105 shadow-x1'}>
                 Start Planning
                 <FaArrowRightLong className='ml-2 w-5! h-5! group-hover:translate-x-1 transition-transform' />
               </Button>
